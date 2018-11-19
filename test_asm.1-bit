@@ -1,0 +1,23 @@
+# 1-bit computer assembler test
+
+reset       0   out0    in0     _1      _0      # await in0 high
+            1   out0    in1     _1      _0      # await in1 high
+            1   out1    in2     _1      _0      # await in2 high
+            1   out2    in3     _1      _0      # await in3 high
+            1   out3    in4     _1      _0      # await in4 high
+            1   out4    in5     _1      _0      # await in5 high
+            1   out5    in6     _1      _0      # await in6 high
+            1   out6    in7     _1      _0      # await in7 high
+quxx        1   out7    in0     _0      _0      # spin forever
+
+# test field alignments
+            1   0       0       0       0
+            0   7       0       0       0
+            0   0       7       0       0
+            0   0       0       255     0
+            0   0       0       0       255
+            1   7       7       255     255
+
+# test symbolic ROM addresses
+            0   0       0       reset   reset
+            0   0       0       quxx    quxx

@@ -1,0 +1,45 @@
+1-bit computer for FPGA implementation, all signals are active-high
+adapted from Jeff Laughton's original multi-chip design by Myron Plichota
+http://laughtonelectronics.com/Arcana/One-bit%20computer/One-bit%20computer.html
+
+legend:
+  . field description association
+  - horizontal wire
+  = horizontal bus
+  ' vertical wire
+  " vertical bus
+  o traditional inversion bubble
+  V broadcast to matching signal name
+  () function, inputs from top/left/bottom, outputs to right
+  [n] note n
+
+ROM instruction fields, updated by rising edge of clk [1]:
+         .......... data to output registers, 1 bit
+         . ........ output select to output registers
+         . . ...... input select to input mux
+         . . . .... true address to next address mux
+         . . . . .. false address to next address mux
+         . . . . .
+         d o i t f
+         ' " " " "
+         V V " " "  next address mux
+             " " "=(f   a)=(a & a')=> to synchronous program ROM [1]
+             " "===(t s  )    "
+             "        '       o arst forces next address = 0
+ inputs ==(i s x)-----'       '
+           input mux          '
+                              '
+           output registers   '
+      d --(d   q)=> outputs,  ' updated by arst or falling edge of clk [2] [3]
+      o ==(s    )             '
+    clk -o(clk  )             '
+        --(arst )             '
+  arst -'---------------------'
+
+[notes]:
+  [1] requires that clk is running with sane tch and tcl
+  [2] arst is asynchronous, outputs are zeroed even if clk has failed
+  [3] falling edge update may provide output->input feedback germane to the
+      current instruction's next rising edge decision
+  [4] io-mapped memory may be implemented by direct loopback
+  [5] an output may be reserved for a dummy bit bucket without side effects

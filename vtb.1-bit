@@ -1,0 +1,11 @@
+# for 1-bit computer Verilog test bench
+
+reset       0   out0    in0     _1      _0      # await in0 high
+            1   out0    in1     _1      _0      # await in1 high
+            1   out1    in2     _1      _0      # await in2 high
+            1   out2    in3     _1      _0      # await in3 high
+            1   out3    in4     _1      _0      # await in4 high
+            1   out4    in5     _1      _0      # await in5 high
+            1   out5    in6     _1      _0      # await in6 high
+            1   out6    in7     _1      _0      # await in7 high
+quxx        1   out7    in0     quxx    quxx    # spin forever

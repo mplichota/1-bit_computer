@@ -1,0 +1,21 @@
+t   0 cp/8, arst_i:0 ins_i:xxxxxxxx outs_o:xxxxxxxx
+t   1 cp/8, arst_i:1 ins_i:xxxxxxxx outs_o:00000000
+t  16 cp/8, arst_i:0 ins_i:00000000 outs_o:00000000
+t  32 cp/8, arst_i:0 ins_i:00000001 outs_o:00000000
+t  40 cp/8, arst_i:0 ins_i:00000001 outs_o:00000001
+t  48 cp/8, arst_i:0 ins_i:00000010 outs_o:00000001
+t  56 cp/8, arst_i:0 ins_i:00000010 outs_o:00000011
+t  64 cp/8, arst_i:0 ins_i:00000100 outs_o:00000011
+t  72 cp/8, arst_i:0 ins_i:00000100 outs_o:00000111
+t  80 cp/8, arst_i:0 ins_i:00001000 outs_o:00000111
+t  88 cp/8, arst_i:0 ins_i:00001000 outs_o:00001111
+t  96 cp/8, arst_i:0 ins_i:00010000 outs_o:00001111
+t 104 cp/8, arst_i:0 ins_i:00010000 outs_o:00011111
+t 112 cp/8, arst_i:0 ins_i:00100000 outs_o:00011111
+t 120 cp/8, arst_i:0 ins_i:00100000 outs_o:00111111
+t 128 cp/8, arst_i:0 ins_i:01000000 outs_o:00111111
+t 136 cp/8, arst_i:0 ins_i:01000000 outs_o:01111111
+t 144 cp/8, arst_i:0 ins_i:10000000 outs_o:01111111
+t 152 cp/8, arst_i:0 ins_i:10000000 outs_o:11111111
+t 160 cp/8, arst_i:0 ins_i:00000000 outs_o:11111111
+end time is        176 cp/8
